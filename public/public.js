@@ -17,6 +17,22 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.getAttribute('
 document.addEventListener('click',e=>{if(!header.contains(e.target))setMenu(false);});
 $('#main-nav').addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false);});
 new ResizeObserver(()=>root.style.setProperty('--header',`${header.offsetHeight}px`)).observe(header);
+// Progressive enhancement: content remains visible without JS or motion support.
+const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)');
+const revealTargets=all('.section-heading,.hero-graph,.foundation-card,.role-preview a,.comparison-models article,.editorial-grid article,.four-steps>li,.roadmap-list li,.evolution>span');
+let revealObserver;
+const showAll=()=>{revealTargets.forEach(el=>el.classList.add('is-visible'));revealObserver?.disconnect();};
+if('IntersectionObserver' in window && !reduceMotion.matches && root.dataset.motion!=='paused'){
+ revealObserver=new IntersectionObserver(entries=>{entries.forEach(({target,isIntersecting})=>{if(isIntersecting){target.classList.add('is-visible');revealObserver.unobserve(target);}});},{threshold:.08,rootMargin:'0px 0px -20px 0px'});
+ revealTargets.forEach(el=>{if(el.getBoundingClientRect().top>=innerHeight){el.classList.add('reveal-ready');const siblings=[...el.parentElement.children].filter(c=>revealTargets.includes(c));el.style.setProperty('--reveal-delay',`${Math.min(siblings.indexOf(el),3)*65}ms`);revealObserver.observe(el);}else el.classList.add('is-visible');});
+}
+reduceMotion.addEventListener('change',e=>{if(e.matches)showAll();});
+$('.motion-toggle').addEventListener('click',()=>{if(root.dataset.motion==='paused')showAll();});
+document.addEventListener('focusin',e=>{e.target.closest('.reveal-ready')?.classList.add('is-visible');});
+let scrollFrame=false;
+const updateScroll=()=>{scrollFrame=false;const height=root.scrollHeight-innerHeight;header.style.setProperty('--scroll-progress',String(height>0?Math.max(0,Math.min(1,scrollY/height)):0));header.classList.toggle('is-scrolled',scrollY>24);};
+addEventListener('scroll',()=>{if(!scrollFrame){scrollFrame=true;requestAnimationFrame(updateScroll);}},{passive:true});
+addEventListener('resize',updateScroll);updateScroll();
 // Retain the original public hash destination without modifying product links.
 if(location.hash==='#solution')document.getElementById('how-it-works')?.scrollIntoView();
 function selectRole(i){const r=data.roles[i];press('[data-org-role]',$(`[data-org-role="${i}"]`));text('#org-name',r.name);$('#org-image').src=basePath+'/assets/'+r.image;$('#org-image').alt=r.name+' bot';text('#org-state',r.state);$('#org-state').classList.toggle('available',i===0);for(const key of ['goal','skills','tools','permissions','team','activity','approval'])text('#org-'+key,r[key]);}
