@@ -1,0 +1,27 @@
+Agents Foundry — product and onboarding explainer
+
+Onboarding target: 5–10 minutes for guided QA assignment after organization setup. Not a measured benchmark. External integration setup is separate.
+
+THE ORGANIZATIONAL LAYER FOR AI
+Meet Agents Foundry, the organizational layer for AI. Give AI employees a role, a team, and a clear boundary, with people in charge.
+
+GUIDED ONBOARDING
+The guided onboarding target is five to ten minutes, once your organization and employee accounts are configured. Here is the QA assignment flow.
+
+01 / CHOOSE A ROLE
+Start in your organization's admin workspace. Choose the QA Engineer blueprint and the active employees who will receive an agent.
+
+02 / DEFINE THE BOUNDARY
+Name the agent and complete the blueprint questionnaire. Define its project scope, working environment, and configuration preferences. Review the enforced capabilities before assigning.
+
+03 / CREATE AND ASSIGN
+Create and assign. Up to twenty-five active employees can receive distinct agent instances from one setup. Each gets an employee-bound, signed assignment and separate conversation history.
+
+04 / VERIFY AND USE
+Employees open Your assigned agents and verify the agent before selecting it. The workspace checks the signature and ownership, connecting the role to the right person and organization.
+
+05 / KEEP HUMAN CONTROL
+The QA employee supports planning. Browser execution requires human approval, and production deployment is denied. An approved run is ready for the next step; connected execution remains on the roadmap.
+
+SPECIALISTS. SHARED DIRECTION.
+Start with the QA foundation. Explore fifty-five specialist role concepts and the wider workforce vision. Build your AI workforce. Run it like a real organization.

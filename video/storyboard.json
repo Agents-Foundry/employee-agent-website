@@ -1,0 +1,16 @@
+{
+  "title": "Agents Foundry — From organization to AI employee",
+  "onboardingTarget": "5–10 minutes",
+  "targetContext": "Guided QA assignment for an already configured organization with active employees. This is a target, not a measured benchmark; external integration setup is separate.",
+  "voice": "Microsoft Zira Desktop",
+  "scenes": [
+    {"id":"intro","eyebrow":"THE ORGANIZATIONAL LAYER FOR AI","title":"Build your AI workforce.","subtitle":"Run it like a real organization.","narration":"Meet Agents Foundry, the organizational layer for AI. Give AI employees a role, a team, and a clear boundary, with people in charge."},
+    {"id":"target","eyebrow":"GUIDED ONBOARDING","title":"An onboarding target of","subtitle":"5–10 minutes.","narration":"The guided onboarding target is five to ten minutes, once your organization and employee accounts are configured. Here is the QA assignment flow."},
+    {"id":"choose","eyebrow":"01 / CHOOSE A ROLE","title":"Start with the right role.","subtitle":"Engineering → QA Engineer","narration":"Start in your organization's admin workspace. Choose the QA Engineer blueprint and the active employees who will receive an agent."},
+    {"id":"configure","eyebrow":"02 / DEFINE THE BOUNDARY","title":"One guided configuration.","subtitle":"A name. A scope. Clear expectations.","narration":"Name the agent and complete the blueprint questionnaire. Define its project scope, working environment, and configuration preferences. Review the enforced capabilities before assigning."},
+    {"id":"assign","eyebrow":"03 / CREATE AND ASSIGN","title":"Configure once. Assign to your team.","subtitle":"Up to 25 active employees per assignment batch.","narration":"Create and assign. Up to twenty-five active employees can receive distinct agent instances from one setup. Each gets an employee-bound, signed assignment and separate conversation history."},
+    {"id":"verify","eyebrow":"04 / VERIFY AND USE","title":"A verified place in the workspace.","subtitle":"Your assigned agents → Verify and use agent","narration":"Employees open Your assigned agents and verify the agent before selecting it. The workspace checks the signature and ownership, connecting the role to the right person and organization."},
+    {"id":"govern","eyebrow":"05 / KEEP HUMAN CONTROL","title":"Onboarded with boundaries.","subtitle":"Plan freely. Review controlled actions.","narration":"The QA employee supports planning. Browser execution requires human approval, and production deployment is denied. An approved run is ready for the next step; connected execution remains on the roadmap."},
+    {"id":"outro","eyebrow":"SPECIALISTS. SHARED DIRECTION.","title":"Your organization. Your AI team.","subtitle":"Start with QA. Explore the wider workforce vision.","narration":"Start with the QA foundation. Explore fifty-five specialist role concepts and the wider workforce vision. Build your AI workforce. Run it like a real organization."}
+  ]
+}

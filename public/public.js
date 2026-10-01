@@ -27,7 +27,7 @@ if('IntersectionObserver' in window && !reduceMotion.matches && root.dataset.mot
  revealTargets.forEach(el=>{if(el.getBoundingClientRect().top>=innerHeight){el.classList.add('reveal-ready');const siblings=[...el.parentElement.children].filter(c=>revealTargets.includes(c));el.style.setProperty('--reveal-delay',`${Math.min(siblings.indexOf(el),3)*65}ms`);revealObserver.observe(el);}else el.classList.add('is-visible');});
 }
 reduceMotion.addEventListener('change',e=>{if(e.matches)showAll();});
-$('.motion-toggle').addEventListener('click',()=>{if(root.dataset.motion==='paused')showAll();});
+$('.motion-toggle').addEventListener('click',()=>{if(root.dataset.motion==='paused'){showAll();all('video').forEach(video=>video.pause());}});
 document.addEventListener('focusin',e=>{e.target.closest('.reveal-ready')?.classList.add('is-visible');});
 let scrollFrame=false;
 const updateScroll=()=>{scrollFrame=false;const height=root.scrollHeight-innerHeight;header.style.setProperty('--scroll-progress',String(height>0?Math.max(0,Math.min(1,scrollY/height)):0));header.classList.toggle('is-scrolled',scrollY>24);};
