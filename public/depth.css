@@ -1,6 +1,6 @@
 /* Lightweight CSS 3D geometry; original character illustrations stay intact. */
-:root{--depth-edge:#cec8f0;--depth-shade:#a59bd6;--depth-title:#d6dce8;--depth-purple:#c6bbed;--depth-cyan:#bde5ef}
-:root[data-theme=dark]{--depth-edge:#49416c;--depth-shade:#27203f;--depth-title:#384354;--depth-purple:#4e416f;--depth-cyan:#254c61}
+:root{--depth-edge:#cec8f0;--depth-shade:#a59bd6;--depth-title:#d6dce8;--depth-purple:#c6bbed;--depth-cyan:#bde5ef;--portrait-rim:#ffffff70;--card-sheen:#ffffff38}
+:root[data-theme=dark]{--depth-edge:#49416c;--depth-shade:#27203f;--depth-title:#384354;--depth-purple:#4e416f;--depth-cyan:#254c61;--portrait-rim:#aaa4ff10;--card-sheen:#b1a2ff0a}
 .hero h1{text-shadow:0 1px 0 var(--depth-title),0 2px 0 var(--depth-title),0 3px 0 var(--depth-title),0 8px 14px #17202e10}
 .hero h1 em{color:var(--accent);background:none;text-shadow:0 1px 0 var(--depth-purple),0 2px 0 var(--depth-purple),0 3px 0 var(--depth-purple),0 4px 0 var(--depth-purple),0 9px 16px #5046d81d}
 .hero-visual{perspective:1100px}
@@ -25,13 +25,13 @@
 .icon-tile{transform:perspective(450px) rotateX(12deg) rotateY(-16deg) rotateZ(-6deg);box-shadow:1px 1px 0 var(--depth-edge),2px 2px 0 var(--depth-edge),3px 3px 0 var(--depth-edge),4px 5px 0 var(--depth-shade),7px 12px 18px #5046d819,inset 1px 1px 2px var(--surface)}
 .foundation-card,.role-preview a,.workforce-card{box-shadow:0 2px 0 var(--surface),0 6px 0 var(--depth-edge),0 20px 36px #30275d0c;isolation:isolate}
 .foundation-card:hover,.role-preview a:hover{box-shadow:0 2px 0 var(--surface),0 8px 0 var(--depth-edge),0 28px 46px #30275d1a}
-.bot-portrait img,.role-preview img{filter:drop-shadow(0 2px 0 #ffffff70) drop-shadow(0 15px 10px #5046d823)}
+.bot-portrait img,.role-preview img{filter:drop-shadow(0 2px 0 var(--portrait-rim)) drop-shadow(0 15px 10px #5046d823)}
 .mini-org>span,.mini-org>div>span{box-shadow:0 3px 0 var(--depth-edge),0 8px 12px #34276909}.mini-bots img{filter:drop-shadow(0 10px 5px #5046d825)}
 .plane-visual{gap:5px;perspective:650px;padding-block:12px}.plane-visual>span{padding:11px;background:linear-gradient(130deg,var(--surface),var(--accent-soft));transform:rotateX(25deg) rotateY(-18deg) rotateZ(7deg);box-shadow:1px 2px 0 var(--depth-edge),2px 4px 0 var(--depth-edge),3px 6px 0 var(--depth-shade),0 14px 14px #34276913}.plane-visual i{padding:3px}
 .blueprint-section .hero-graph{box-shadow:0 2px 0 var(--surface),0 7px 0 var(--depth-edge),0 11px 0 var(--subtle),0 30px 70px #5046d81a}
 .button.primary{box-shadow:0 1px 0 #ffffff50 inset,0 4px 0 color-mix(in srgb,var(--accent) 70%,#181037),0 6px 0 color-mix(in srgb,var(--accent) 60%,#181037),0 12px 20px #5046d826}.button.primary:active{transform:translateY(3px);box-shadow:0 2px 0 color-mix(in srgb,var(--accent) 70%,#181037)}
 .depth-card{position:relative;transform:perspective(1100px) rotateX(var(--depth-x,0deg)) rotateY(var(--depth-y,0deg));transition:opacity .65s ease,transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
-.depth-card::after{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--light-x,50%) var(--light-y,0%),#ffffff38,transparent 52%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:2}
+.depth-card::after{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--light-x,50%) var(--light-y,0%),var(--card-sheen),transparent 52%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:2}
 .depth-card.depth-active::after{opacity:1}.depth-card.depth-active{transition:transform .12s linear,box-shadow .35s,border-color .35s}
 .depth-card.reveal-ready:not(.is-visible){transform:translateY(28px);opacity:0}
 .depth-card:focus-visible{transform:none!important}.depth-card:focus-within::after{opacity:0}
