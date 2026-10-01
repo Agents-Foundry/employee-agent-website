@@ -1,0 +1,13 @@
+{
+  "source": "Agents-Foundry/employee-agent-platform:packages/policy-engine/src/index.ts",
+  "note": "Public policy descriptions are checked against the verified policy contract; this website does not contain or execute the product policy engine.",
+  "actions": {
+    "qa.plan": "ALLOW",
+    "jira.read": "ALLOW",
+    "repository.read": "ALLOW",
+    "qa.execute_playwright": "REQUIRE_APPROVAL",
+    "jira.issue.create": "REQUIRE_APPROVAL",
+    "repository.pull_request.create": "REQUIRE_APPROVAL",
+    "production.deploy": "DENY"
+  }
+}

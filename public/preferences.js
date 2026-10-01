@@ -1,0 +1,1 @@
+try{const root=document.documentElement;const saved=localStorage.getItem('af-theme');root.dataset.theme=saved||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');root.dataset.motion=localStorage.getItem('af-motion')||(matchMedia('(prefers-reduced-motion: reduce)').matches?'paused':'running');}catch{}

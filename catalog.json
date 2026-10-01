@@ -1,0 +1,332 @@
+[
+  {
+    "department": "Engineering",
+    "name": "Fronto",
+    "role": "Frontend Developer",
+    "asset": "fronto.png"
+  },
+  {
+    "department": "Engineering",
+    "name": "Backo",
+    "role": "Backend Developer",
+    "asset": "backo.png"
+  },
+  {
+    "department": "Engineering",
+    "name": "Stacko",
+    "role": "Full Stack Developer",
+    "asset": "stacko.png"
+  },
+  {
+    "department": "Engineering",
+    "name": "DevOpsy",
+    "role": "DevOps Engineer",
+    "asset": "devopsy.png"
+  },
+  {
+    "department": "Engineering",
+    "name": "Testo",
+    "role": "QA / Testing",
+    "asset": "testo.png"
+  },
+  {
+    "department": "Engineering",
+    "name": "Automo",
+    "role": "Automation Engineer",
+    "asset": "automo.png"
+  },
+  {
+    "department": "Engineering",
+    "name": "Designo",
+    "role": "UI/UX Designer",
+    "asset": "designo.png"
+  },
+  {
+    "department": "Knowledge",
+    "name": "Writeo",
+    "role": "Technical Writer",
+    "asset": "writeo.png"
+  },
+  {
+    "department": "Knowledge",
+    "name": "Doco",
+    "role": "Documentation Specialist",
+    "asset": "doco.png"
+  },
+  {
+    "department": "Operations",
+    "name": "Dato",
+    "role": "Data Analyst",
+    "asset": "dato.png"
+  },
+  {
+    "department": "Engineering",
+    "name": "Sciento",
+    "role": "Data Scientist",
+    "asset": "sciento.png"
+  },
+  {
+    "department": "Engineering",
+    "name": "Intelli",
+    "role": "AI/ML Engineer",
+    "asset": "intelli.png"
+  },
+  {
+    "department": "Engineering",
+    "name": "Dbo",
+    "role": "Database Administrator",
+    "asset": "dbo.png"
+  },
+  {
+    "department": "Engineering",
+    "name": "Cloudo",
+    "role": "Cloud Architect",
+    "asset": "cloudo.png"
+  },
+  {
+    "department": "Engineering",
+    "name": "Securo",
+    "role": "Security Engineer",
+    "asset": "securo.png"
+  },
+  {
+    "department": "Engineering",
+    "name": "Cybero",
+    "role": "Cybersecurity Analyst",
+    "asset": "cybero.png"
+  },
+  {
+    "department": "Product",
+    "name": "Producto",
+    "role": "Product Manager",
+    "asset": "producto.png"
+  },
+  {
+    "department": "Product",
+    "name": "TechProducto",
+    "role": "Technical Product Manager",
+    "asset": "techproducto.png"
+  },
+  {
+    "department": "Product",
+    "name": "Planno",
+    "role": "Project Manager",
+    "asset": "planno.png"
+  },
+  {
+    "department": "Leadership",
+    "name": "Programo",
+    "role": "Program Manager",
+    "asset": "programo.png"
+  },
+  {
+    "department": "Product",
+    "name": "Analytico",
+    "role": "Business Analyst",
+    "asset": "analytico.png"
+  },
+  {
+    "department": "Engineering",
+    "name": "Solvo",
+    "role": "Solutions Architect",
+    "asset": "solvo.png"
+  },
+  {
+    "department": "Leadership",
+    "name": "CTO-X",
+    "role": "Chief Technology Officer",
+    "asset": "cto-x.png"
+  },
+  {
+    "department": "Leadership",
+    "name": "Engino",
+    "role": "Engineering Manager",
+    "asset": "engino.png"
+  },
+  {
+    "department": "Operations",
+    "name": "Marketo",
+    "role": "Marketing Specialist",
+    "asset": "marketo.png"
+  },
+  {
+    "department": "Operations",
+    "name": "Growo",
+    "role": "Growth Hacker",
+    "asset": "growo.png"
+  },
+  {
+    "department": "Operations",
+    "name": "Seono",
+    "role": "SEO Expert",
+    "asset": "seono.png"
+  },
+  {
+    "department": "Knowledge",
+    "name": "Contento",
+    "role": "Content Writer",
+    "asset": "contento.png"
+  },
+  {
+    "department": "Operations",
+    "name": "Sello",
+    "role": "Sales Representative",
+    "asset": "sello.png"
+  },
+  {
+    "department": "Support",
+    "name": "Supporto",
+    "role": "Customer Support",
+    "asset": "supporto.png"
+  },
+  {
+    "department": "Support",
+    "name": "Successo",
+    "role": "Customer Success Manager",
+    "asset": "successo.png"
+  },
+  {
+    "department": "Finance",
+    "name": "Finanzo",
+    "role": "Finance Analyst",
+    "asset": "finanzo.png"
+  },
+  {
+    "department": "Finance",
+    "name": "Accounto",
+    "role": "Accountant",
+    "asset": "accounto.png"
+  },
+  {
+    "department": "Operations",
+    "name": "Huro",
+    "role": "HR Manager",
+    "asset": "huro.png"
+  },
+  {
+    "department": "Operations",
+    "name": "Hireo",
+    "role": "Recruiter",
+    "asset": "hireo.png"
+  },
+  {
+    "department": "Operations",
+    "name": "Legalo",
+    "role": "Legal Advisor",
+    "asset": "legalo.png"
+  },
+  {
+    "department": "Operations",
+    "name": "Opero",
+    "role": "Operations Manager",
+    "asset": "opero.png"
+  },
+  {
+    "department": "Operations",
+    "name": "Supplyo",
+    "role": "Supply Chain Specialist",
+    "asset": "supplyo.png"
+  },
+  {
+    "department": "Operations",
+    "name": "Flowo",
+    "role": "Workflow Specialist",
+    "asset": "flowo.png"
+  },
+  {
+    "department": "Engineering",
+    "name": "MLo",
+    "role": "ML Engineer",
+    "asset": "mlo.png"
+  },
+  {
+    "department": "Engineering",
+    "name": "AIOps",
+    "role": "AI Operations",
+    "asset": "aiops.png"
+  },
+  {
+    "department": "Product",
+    "name": "Researcho",
+    "role": "Research Analyst",
+    "asset": "researcho.png"
+  },
+  {
+    "department": "Product",
+    "name": "Scrumo",
+    "role": "Scrum Master",
+    "asset": "scrumo.png"
+  },
+  {
+    "department": "Engineering",
+    "name": "Integrato",
+    "role": "Integration Engineer",
+    "asset": "integrato.png"
+  },
+  {
+    "department": "Engineering",
+    "name": "APIGen",
+    "role": "API Designer",
+    "asset": "apigen.png"
+  },
+  {
+    "department": "Engineering",
+    "name": "Monitoro",
+    "role": "Observability Engineer",
+    "asset": "monitoro.png"
+  },
+  {
+    "department": "Engineering",
+    "name": "PerfX",
+    "role": "Performance Engineer",
+    "asset": "perfx.png"
+  },
+  {
+    "department": "Product",
+    "name": "UXRes",
+    "role": "UX Researcher",
+    "asset": "uxres.png"
+  },
+  {
+    "department": "Operations",
+    "name": "Socialo",
+    "role": "Social Media Manager",
+    "asset": "socialo.png"
+  },
+  {
+    "department": "Operations",
+    "name": "Emailo",
+    "role": "Email Automation",
+    "asset": "emailo.png"
+  },
+  {
+    "department": "Operations",
+    "name": "Growtho",
+    "role": "Growth Hacker",
+    "asset": "growtho.png"
+  },
+  {
+    "department": "Knowledge",
+    "name": "Traino",
+    "role": "Training Specialist",
+    "asset": "traino.png"
+  },
+  {
+    "department": "Product",
+    "name": "Feedbacko",
+    "role": "Feedback Analyzer",
+    "asset": "feedbacko.png"
+  },
+  {
+    "department": "Finance",
+    "name": "AuditAI",
+    "role": "Audit Specialist",
+    "asset": "auditai.png"
+  },
+  {
+    "department": "Operations",
+    "name": "Complianceo",
+    "role": "Compliance Officer",
+    "asset": "complianceo.png"
+  }
+]
