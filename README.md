@@ -30,6 +30,7 @@ This builds the site and checks routes, assets, metadata, anchors, role catalog,
 - `public-data.mjs`, `catalog.json`, `role-outputs.json`: capability descriptions and employee catalog.
 - `public/public.css`: responsive design and themes.
 - `public/modern.css`: framed sections, illustrated feature grid, dimensional cards and desktop sticky storytelling.
+- `public/depth.css`, `public/depth.js`: CSS 3D hero geometry, dimensional typography/materials and bounded pointer perspective.
 - `public/public.js`: interactive controls.
 - `public/assets/`: original bot images, logo and local font.
 - `public-build.mjs`: static generator; output goes to ignored `dist/`.
@@ -37,6 +38,8 @@ This builds the site and checks routes, assets, metadata, anchors, role catalog,
 The public access page does not collect credentials. Contact prepares a local email draft; the visitor sends it using their chosen email service. Current and planned product capabilities remain labeled. `tests/policy-contract.json` records the verified product policy contract; update it alongside any changes to policy descriptions.
 
 Scroll reveals progressively enhance visible content using IntersectionObserver. Without JavaScript, with reduced motion, or after choosing Pause motion, content stays readable. The sticky operating-model cards become a normal vertical sequence on smaller screens. No animation library or remote asset dependency is required.
+
+The 3D layer uses CSS geometry and the existing bot art. Mouse perspective is limited to desktop fine pointers, resets on exit/scroll/focus, and stops with Pause motion or reduced motion. Touch screens retain static depth without pointer tilt; the hero shapes stay decorative and hidden from assistive technology.
 
 Visual references: [lookfor](https://lookfor.ai/), [Atlas](https://youratlas.com/), [Elimentary](https://www.elimentary.com/) and [Nolana](https://nolana.com/). The redesign uses framed scenes, layered gradients and visual feature cards as inspiration; illustrations, copy and product diagrams remain specific to Agents Foundry.
 
