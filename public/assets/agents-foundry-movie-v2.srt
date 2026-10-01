@@ -1,0 +1,91 @@
+1
+00:00:00,450 --> 00:00:04,184
+Every growing team has more work than time. Meet Testo,
+
+2
+00:00:04,184 --> 00:00:07,917
+a QA employee in Agents Foundry. Let's give this new
+
+3
+00:00:07,917 --> 00:00:10,158
+teammate a place in your organization.
+
+4
+00:00:11,358 --> 00:00:15,489
+With your organization and employee accounts configured, the guided QA
+
+5
+00:00:15,489 --> 00:00:19,620
+onboarding target is five to ten minutes. Follow Testo's arrival.
+
+6
+00:00:20,820 --> 00:00:24,250
+The administrator chooses the QA Engineer blueprint and the active
+
+7
+00:00:24,250 --> 00:00:27,679
+employees who will receive an agent. A role gives Testo
+
+8
+00:00:27,679 --> 00:00:28,708
+a clear purpose.
+
+9
+00:00:29,908 --> 00:00:34,411
+Next, name the agent and define its scope, environment, and
+
+10
+00:00:34,411 --> 00:00:38,914
+configuration preferences. Review the enforced capabilities. Testo now has a
+
+11
+00:00:38,914 --> 00:00:40,715
+boundary around the assignment.
+
+12
+00:00:41,915 --> 00:00:45,916
+One setup can assign distinct instances to up to twenty-five
+
+13
+00:00:45,916 --> 00:00:49,918
+active employees. Each assignment is signed and employee-bound, with its
+
+14
+00:00:49,918 --> 00:00:51,118
+own conversation history.
+
+15
+00:00:52,318 --> 00:00:56,750
+The employee verifies the assigned agent. Signature, ownership, and organization
+
+16
+00:00:56,750 --> 00:01:01,182
+checks connect Testo to the right person. The teammate has
+
+17
+00:01:01,182 --> 00:01:01,625
+arrived.
+
+18
+00:01:02,825 --> 00:01:07,708
+Testo supports QA planning. Browser execution needs human approval. Production
+
+19
+00:01:07,708 --> 00:01:12,591
+deployment is denied. Approval grants permission; connected execution is a
+
+20
+00:01:12,591 --> 00:01:15,032
+separate layer on the roadmap.
+
+21
+00:01:16,232 --> 00:01:21,009
+Start with QA. Explore fifty-five specialist role concepts and the
+
+22
+00:01:21,009 --> 00:01:25,786
+wider workforce vision. Agents Foundry. Build your AI workforce. Run
+
+23
+00:01:25,786 --> 00:01:28,175
+it like a real organization.
