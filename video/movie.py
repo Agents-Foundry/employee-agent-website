@@ -1,4 +1,4 @@
-"""Original character film: articulated 3D rigs, staged action and moving cameras.
+"""Character film: original website bot artwork rigged inside a 3D story.
 
 Headless ModernGL rendering; no browser capture, stock footage or image slideshow.
 Run narrate.ps1 first, then python video/movie.py [--preview-only].
@@ -36,6 +36,59 @@ vec3 c=color*(.46+.60*diff)+vec3(.19,.16,.27)*rim+vec3(.9)*spec;
 c=mix(c,vec3(.87,.88,.97),clamp((length(eye-world)-15)*.025,0,.18));
 result=vec4(c,1);}
 ''')
+
+# Use the actual website assets as GPU textures. Art remains unchanged on disk;
+# the dense mesh bends at shoulders, neck and feet to animate the original design.
+sprite_program=ctx.program(vertex_shader='''#version 330
+in vec2 source_uv; out vec2 uv;
+uniform mat4 vp, model; uniform float time, walk, wave, reach, floor_uv;
+vec2 rotateAround(vec2 p,vec2 pivot,float angle){
+    float c=cos(angle),s=sin(angle);return pivot+mat2(c,s,-s,c)*(p-pivot);
+}
+void main(){
+    uv=source_uv;vec2 p=uv;float gait=sin(time*7.5);
+    // The original face, curl and ears stay rigid; articulation starts below the neck.
+    float left=(1-smoothstep(.278,.318,uv.x))*smoothstep(.50,.54,uv.y)*(1-smoothstep(.65,.69,uv.y));
+    float right=smoothstep(.572,.625,uv.x)*(1-smoothstep(.72,.75,uv.x))*smoothstep(.50,.54,uv.y)*(1-smoothstep(.635,.68,uv.y));
+    p=mix(p,rotateAround(p,vec2(.31,.53),sin(time*4.0)*(.035+wave*.04)+gait*.035*walk),left);
+    p=mix(p,rotateAround(p,vec2(.59,.53),sin(time*4.8)*(.03+wave*.04)-reach*.035),right);
+    float feet=smoothstep(.73,.78,uv.y);
+    float side=1-smoothstep(.425,.46,uv.x);float stepWave=gait*(side*2-1);
+    p.y-=feet*max(0,stepWave)*.027*walk;p.x+=feet*stepWave*.021*walk;
+    float tools=smoothstep(.705,.75,uv.x);
+    p.y+=tools*sin(time*1.7+uv.y*19)*.010;
+    p.x+=tools*cos(time*.9+uv.y*14)*.008;
+    vec3 local=vec3((p.x-.455)*3.55,(floor_uv-p.y)*3.55+abs(gait)*.055*walk+sin(time*2)*.012,0);
+    gl_Position=vp*model*vec4(local,1);
+}
+''',fragment_shader='''#version 330
+in vec2 uv; uniform sampler2D artwork;out vec4 result;
+void main(){result=texture(artwork,uv);if(result.a<.035)discard;}
+''')
+sprite_vertices=[]
+for i in range(70):
+    for j in range(70):
+        for a,b in [(i,j),(i+1,j),(i+1,j+1),(i,j),(i+1,j+1),(i,j+1)]:sprite_vertices.append((a/70,b/70))
+sprite_buffer=ctx.buffer(np.array(sprite_vertices,dtype='f4').tobytes())
+sprite_mesh=ctx.vertex_array(sprite_program,[(sprite_buffer,'2f','source_uv')])
+bot_textures={}
+for bot_name in ['testo','fronto','producto']:
+    artwork=Image.open(OUT/(bot_name+'.avif')).convert('RGBA')
+    texture=ctx.texture(artwork.size,4,artwork.tobytes());texture.build_mipmaps()
+    texture.filter=(moderngl.LINEAR_MIPMAP_LINEAR,moderngl.LINEAR);bot_textures[bot_name]=texture
+camera_vp=np.eye(4,dtype='f4');camera_eye=np.array((6,5,12),dtype='f4')
+
+def website_bot(pos,color,t,walk,wave,turn,reach,scale):
+    name='testo' if color==PINK else 'fronto' if color==BLUE else 'producto'
+    delta=camera_eye-np.array(pos);facing=math.atan2(delta[0],delta[2])+turn*.12
+    sprite_program['vp'].write(camera_vp.T.astype('f4').tobytes())
+    # Keep the boot pixels above the floor shadow, rather than clipping their soles.
+    grounded=np.array(pos,dtype='f4')+np.array((0,.10*scale,0),dtype='f4')
+    sprite_program['model'].write(matrix(grounded,(scale,scale,scale),yaw(facing)).T.tobytes())
+    for key,value in [('time',t),('walk',walk),('wave',wave),('reach',reach),('floor_uv',.883 if name=='producto' else .84)]:sprite_program[key].value=value
+    bot_textures[name].use(0);sprite_program['artwork'].value=0
+    ctx.enable(moderngl.BLEND);ctx.blend_func=(moderngl.SRC_ALPHA,moderngl.ONE_MINUS_SRC_ALPHA)
+    sprite_mesh.render();ctx.disable(moderngl.BLEND)
 
 def unit(v):
     v=np.array(v,dtype='f4'); return v/np.linalg.norm(v)
@@ -85,6 +138,10 @@ def shadow(x,z,size=1):ball((x,.055,z),(.68*size,.016,.38*size),(.78,.78,.87),sh
 
 def character(pos,color,t,walk=0,wave=0,turn=0,human=False,reach=0,scale=1):
     """Hierarchical rig: torso/head/eyes, antenna, shoulders, elbows, hips, knees, feet."""
+    if not human:
+        shadow(pos[0],pos[2],scale)
+        website_bot(pos,color,t,walk,wave,turn,reach,scale)
+        return
     root=np.array(pos,dtype='f4');rot=yaw(turn);phase=t*7.5;bounce=abs(math.sin(phase))*.085*walk
     def world(p):return root+rot@(np.array(p)*scale)
     def B(p,s,c,shine=.15):ball(world(p),np.array(s)*scale,c,rot,shine)
@@ -172,6 +229,7 @@ def label(im,value,pos,vp,size=27,accent=False):
     d.text((x-width/2,y),value,font=font(size,True),fill='#6449cf' if accent else '#232238')
 
 def scene_draw(name,t,duration):
+    global camera_vp,camera_eye
     labels=[];u=t/duration
     # A slow orbit and dolly replace the static camera of a slide deck.
     orbit=.12*math.sin(u*math.pi-.6)
@@ -181,6 +239,7 @@ def scene_draw(name,t,duration):
     if name=='govern':eye=np.array([3.2+orbit*4,5.2,13.6-u],dtype='f4');target=np.array([0,1.22,.15],dtype='f4')
     if name=='outro':eye*=.9;target=np.array([0,1.40,.55],dtype='f4')
     vp=perspective(math.radians(39),W/H)@view(eye,target)
+    camera_vp=vp;camera_eye=eye
     program['vp'].write(vp.T.astype('f4').tobytes());program['eye'].value=tuple(eye)
     room(t)
     if name=='intro':
@@ -284,7 +343,7 @@ def export_audio():
     mixed=np.clip(sound+music*duck*fade,-.98,.98)
     with wave.open(str(WORK/'movie-audio.wav'),'wb') as wav:
         wav.setnchannels(1);wav.setsampwidth(2);wav.setframerate(rate);wav.writeframes((mixed*32767).astype('<i2').tobytes())
-    stem='agents-foundry-movie-v2'
+    stem='agents-foundry-movie-v3'
     (OUT/(stem+'.vtt')).write_text('WEBVTT\n\n'+'\n\n'.join(f'{stamp(a)} --> {stamp(b)} line:14%\n{c}' for a,b,c in cues)+'\n',encoding='utf8')
     (OUT/(stem+'.srt')).write_text('\n\n'.join(f'{i+1}\n{stamp(a,",")} --> {stamp(b,",")}\n{c}' for i,(a,b,c) in enumerate(cues))+'\n',encoding='utf8')
     (OUT/(stem+'-transcript.txt')).write_text(SPEC['title']+'\n\n'+SPEC['targetContext']+'\n\n'+'\n\n'.join(s['eyebrow']+'\n'+s['narration'] for s in scenes),encoding='utf8')
@@ -316,10 +375,10 @@ export_audio()
 if '--preview-only' in sys.argv:
     for scene in scenes:
         frame(scene,min(5,scene['duration']*.65)).save(WORK/(scene['id']+'-3d.jpg'),quality=92)
-    frame(scenes[0],5).save(OUT/'onboarding-movie-v2-poster.jpg',quality=92)
+    frame(scenes[0],5).save(OUT/'onboarding-movie-v3-poster.jpg',quality=92)
     print('Saved eight 3D scene previews',flush=True);sys.exit(0)
 import imageio_ffmpeg
-target=OUT/'agents-foundry-movie-v2.mp4'
+target=OUT/'agents-foundry-movie-v3.mp4'
 cmd=[os.environ.get('FFMPEG_BINARY') or imageio_ffmpeg.get_ffmpeg_exe(),'-y','-loglevel','error','-f','rawvideo','-pixel_format','rgb24','-video_size',f'{W}x{H}','-framerate',str(FPS),'-i','pipe:0','-i',str(WORK/'movie-audio.wav'),'-c:v','libx264','-preset','fast','-crf','21','-pix_fmt','yuv420p','-c:a','aac','-b:a','128k','-movflags','+faststart','-shortest',str(target)]
 process=subprocess.Popen(cmd,stdin=subprocess.PIPE);started=time.monotonic()
 try:
@@ -328,7 +387,7 @@ try:
             im=frame(scene,n/FPS)
             if n==150:
                 im.save(WORK/(scene['id']+'-3d.jpg'),quality=92)
-                if scene['id']=='intro':im.save(OUT/'onboarding-movie-v2-poster.jpg',quality=92)
+                if scene['id']=='intro':im.save(OUT/'onboarding-movie-v3-poster.jpg',quality=92)
             process.stdin.write(im.tobytes())
         print(f'Rendered {scene["id"]}, elapsed {time.monotonic()-started:.1f}s',flush=True)
 finally:process.stdin.close()

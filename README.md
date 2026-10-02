@@ -38,7 +38,7 @@ This builds the site and checks routes, assets, metadata, anchors, role catalog,
 
 The public access page does not collect credentials. Contact prepares a local email draft; the visitor sends it using their chosen email service. Current and planned product capabilities remain labeled. `tests/policy-contract.json` records the verified product policy contract; update it alongside any changes to policy descriptions.
 
-The homepage includes an original 1080p, 30 fps character film with articulated 3D bots and a human teammate, moving cameras, narration, an original quiet soundtrack, English captions, a transcript and an MP4 download. It describes the 5–10 minute guided onboarding target for a configured organization, using the implemented QA assignment flow. The video uses native controls and does not autoplay or preload its full media file.
+The homepage includes a 1080p, 30 fps character film with the original website bot artwork animated on deformable meshes in a 3D environment. It includes a human teammate, moving cameras, narration, an original quiet soundtrack, English captions, a transcript and an MP4 download. It describes the 5–10 minute guided onboarding target for a configured organization, using the implemented QA assignment flow. The video uses native controls and does not autoplay or preload its full media file.
 
 Scroll reveals progressively enhance visible content using IntersectionObserver. Without JavaScript, with reduced motion, or after choosing Pause motion, content stays readable. The sticky operating-model cards become a normal vertical sequence on smaller screens. No animation library or remote asset dependency is required.
 

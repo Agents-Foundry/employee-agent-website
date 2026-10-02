@@ -1,6 +1,6 @@
 # Product and onboarding explainer
 
-The current film is an original eight-scene 3D character story. Testo walks into a stylized office, meets a human teammate, receives a role and boundaries, arrives as separate employee instances, passes verification and encounters policy gates. Articulated rigs animate legs, feet, shoulders, elbows, hands, facial blinks and antennae. Moving cameras, beveled props, four-sample antialiasing and directional lighting are rendered in a headless OpenGL context. No static character images are used in the movie.
+The current film is an eight-scene character story using the exact website bot artwork: `testo.avif`, `fronto.avif` and `producto.avif`. The original transparent images are mapped onto deformable GPU meshes inside a 3D office, preserving their faces, costumes, curls and ears. This is a 2.5D character treatment with walking, arm movement, breathing and floating role icons; the human teammate and environment are 3D geometry. Moving cameras, beveled props, four-sample antialiasing and directional lighting render in a headless OpenGL context. Testo receives a role and boundaries, arrives as separate employee instances, passes verification and encounters policy gates.
 
 Narration uses the Windows Microsoft Zira Desktop voice. The quiet original synthesized score is mixed and ducked beneath speech. The film is an illustrated product story, not a recording of private workspaces or live execution.
 
@@ -14,6 +14,6 @@ The 5–10 minute figure is the requested **guided onboarding target**, for a co
 4. Run `python video/movie.py --preview-only` to review scene composition, then `python video/movie.py` to render. Set `FFMPEG_BINARY` to an official FFmpeg executable, or use `imageio-ffmpeg==0.6.0` to locate one.
 5. Review the scene preview JPEGs and render metadata in ignored `video/generated/` before publishing.
 
-The export is 1920×1080, 30 fps, H.264/AAC, with fast-start playback. Versioned `agents-foundry-movie-v2` files in `public/assets/` include MP4, English WebVTT/SRT captions and a plain-text transcript, plus `onboarding-movie-v2-poster.jpg`. Captions sit above the lower third. Generated WAVs and previews stay out of Git. The website embeds the film with native controls, captions and an expandable transcript, without autoplay.
+The export is 1920×1080, 30 fps, H.264/AAC, with fast-start playback. Versioned `agents-foundry-movie-v3` files in `public/assets/` include MP4, English WebVTT/SRT captions and a plain-text transcript, plus `onboarding-movie-v3-poster.jpg`. Captions sit above the lower third. Generated WAVs and previews stay out of Git. The website embeds the film with native controls, captions and an expandable transcript, without autoplay.
 
 `render.py` and the earlier `agents-foundry-explainer` assets are retained as the previous graphic-based edition. The website uses the new character film.
