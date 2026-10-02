@@ -1,0 +1,195 @@
+1
+00:00:00,450 --> 00:00:02,317
+Every growing team has more
+
+2
+00:00:02,317 --> 00:00:03,437
+work than time.
+
+3
+00:00:03,437 --> 00:00:05,304
+Meet Testo, a QA employee
+
+4
+00:00:05,304 --> 00:00:06,424
+in Agents Foundry.
+
+5
+00:00:06,424 --> 00:00:08,291
+Let's give this new teammate
+
+6
+00:00:08,291 --> 00:00:10,158
+a place in your organization.
+
+7
+00:00:11,358 --> 00:00:13,010
+With your organization and
+
+8
+00:00:13,010 --> 00:00:14,250
+employee accounts configured,
+
+9
+00:00:14,250 --> 00:00:16,315
+the guided QA onboarding target
+
+10
+00:00:16,315 --> 00:00:18,381
+is five to ten minutes.
+
+11
+00:00:18,381 --> 00:00:19,620
+Follow Testo's arrival.
+
+12
+00:00:20,820 --> 00:00:22,535
+The administrator chooses the QA
+
+13
+00:00:22,535 --> 00:00:23,907
+Engineer blueprint and the
+
+14
+00:00:23,907 --> 00:00:25,279
+active employees who will
+
+15
+00:00:25,279 --> 00:00:26,307
+receive an agent.
+
+16
+00:00:26,307 --> 00:00:28,022
+A role gives Testo a
+
+17
+00:00:28,022 --> 00:00:28,708
+clear purpose.
+
+18
+00:00:29,908 --> 00:00:32,160
+Next, name the agent and
+
+19
+00:00:32,160 --> 00:00:33,510
+define its scope,
+
+20
+00:00:33,510 --> 00:00:34,861
+environment, and configuration
+
+21
+00:00:34,861 --> 00:00:36,663
+preferences. Review the enforced
+
+22
+00:00:36,663 --> 00:00:38,914
+capabilities. Testo now has a
+
+23
+00:00:38,914 --> 00:00:40,715
+boundary around the assignment.
+
+24
+00:00:41,915 --> 00:00:43,916
+One setup can assign distinct
+
+25
+00:00:43,916 --> 00:00:45,916
+instances to up to twenty-five
+
+26
+00:00:45,916 --> 00:00:47,117
+active employees. Each
+
+27
+00:00:47,117 --> 00:00:48,717
+assignment is signed and
+
+28
+00:00:48,717 --> 00:00:50,318
+employee-bound, with its own
+
+29
+00:00:50,318 --> 00:00:51,118
+conversation history.
+
+30
+00:00:52,318 --> 00:00:54,091
+The employee verifies the
+
+31
+00:00:54,091 --> 00:00:55,420
+assigned agent. Signature,
+
+32
+00:00:55,420 --> 00:00:56,750
+ownership, and organization
+
+33
+00:00:56,750 --> 00:00:58,966
+checks connect Testo to the
+
+34
+00:00:58,966 --> 00:01:01,182
+right person. The teammate has
+
+35
+00:01:01,182 --> 00:01:01,625
+arrived.
+
+36
+00:01:02,825 --> 00:01:04,779
+Testo supports QA planning.
+
+37
+00:01:04,779 --> 00:01:06,732
+Browser execution needs human
+
+38
+00:01:06,732 --> 00:01:08,196
+approval. Production deployment
+
+39
+00:01:08,196 --> 00:01:10,150
+is denied. Approval grants
+
+40
+00:01:10,150 --> 00:01:11,614
+permission; connected execution
+
+41
+00:01:11,614 --> 00:01:14,056
+is a separate layer on
+
+42
+00:01:14,056 --> 00:01:15,032
+the roadmap.
+
+43
+00:01:16,232 --> 00:01:17,665
+Start with QA.
+
+44
+00:01:17,665 --> 00:01:19,099
+Explore fifty-five specialist
+
+45
+00:01:19,099 --> 00:01:21,487
+role concepts and the wider
+
+46
+00:01:21,487 --> 00:01:22,920
+workforce vision. Agents
+
+47
+00:01:22,920 --> 00:01:24,831
+Foundry. Build your AI
+
+48
+00:01:24,831 --> 00:01:27,220
+workforce. Run it like a
+
+49
+00:01:27,220 --> 00:01:28,175
+real organization.

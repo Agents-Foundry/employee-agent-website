@@ -8,6 +8,7 @@ from pathlib import Path
 import numpy as np
 import moderngl
 from PIL import Image, ImageDraw, ImageFont
+from captions import package_caption_film
 
 ROOT=Path(__file__).resolve().parent.parent
 OUT=ROOT/'public/assets'; WORK=ROOT/'video/generated'
@@ -392,5 +393,6 @@ try:
         print(f'Rendered {scene["id"]}, elapsed {time.monotonic()-started:.1f}s',flush=True)
 finally:process.stdin.close()
 if process.wait()!=0:raise RuntimeError('Movie export failed')
+target=package_caption_film(target,scenes)
 (WORK/'movie-info.json').write_text(json.dumps({'duration':cursor,'width':W,'height':H,'fps':FPS,'bytes':target.stat().st_size,'renderer':ctx.info['GL_RENDERER'],'scenes':scenes},indent=2),encoding='utf8')
 print(f'Exported {cursor:.1f}s 3D film, {target.stat().st_size/1048576:.1f} MB',flush=True)
