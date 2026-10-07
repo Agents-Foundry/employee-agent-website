@@ -9,5 +9,7 @@
     "jira.issue.create": "REQUIRE_APPROVAL",
     "repository.pull_request.create": "REQUIRE_APPROVAL",
     "production.deploy": "DENY"
-  }
+  },
+  "commit": "46bfce6bb10c58a4b4f6cc5109e88eb39512c01b",
+  "reviewed": "2026-10-07"
 }

@@ -61,3 +61,9 @@ The generated site includes all static routes, an XML sitemap, robots.txt, a 404
 Extracted from the published Agents Foundry website, source revision `d58a5a3c91b28dfef5655411c4d54b3e09b27f21`. The original Sites checkout and the authenticated product application are maintained separately. This repository owns the GitHub Pages copy and its build configuration.
 
 MIT license; see [LICENSE](LICENSE).
+
+## Product content baseline — 7 October 2026
+
+Website copy is reviewed against platform commit `46bfce6bb10c58a4b4f6cc5109e88eb39512c01b`. It describes five engineering roles, seven blueprint versions, the native runtime/model gateway, signed sandbox execution, connectors, PostgreSQL RLS, Vault, evidence and operational controls. The 55 bot illustrations remain the broader workforce catalog; current engineering roles and expansion roles are distinguished. The public diagrams and dashboards are explanatory, not live deployment telemetry.
+
+The website links to the published [technical docs](https://agents-foundry.github.io/employee-agent-platform-docs/), [wiki](https://github.com/Agents-Foundry/employee-agent-platform/wiki) and latest pilot environment checklist. A passing website build does not qualify a pilot; live validation and guarded smoke reports are required for the deployed product.
