@@ -25,4 +25,18 @@ click('.menu-toggle');assert.equal(d.querySelector('.menu-toggle').getAttribute(
 d.querySelector('textarea').value='Pilot question <script>test</script>';d.querySelector('form').dispatchEvent(new w.Event('submit',{cancelable:true}));assert.equal(d.querySelector('#inquiry-draft').hidden,false);assert.match(d.querySelector('#inquiry-status').textContent,/Not sent/);assert(!d.querySelector('#draft-text script'));assert(!d.querySelector('#contact').textContent.includes('akki77parekh@gmail.com'));home.window.close();
 const product=boot('/product/');product.window.document.querySelector('[data-capability="7"]').click();assert.equal(product.window.document.querySelector('#capability-status').textContent,'Implemented');product.window.close();
 const cat=boot('/ai-employees/'),c=cat.window.document;const visible=()=>[...c.querySelectorAll('.workforce-card')].filter(e=>!e.hidden);assert.equal(visible().length,9);c.querySelector('#show-all').click();assert.equal(visible().length,55);[...c.querySelectorAll('[data-department-filter]')].find(e=>e.dataset.departmentFilter==='People & HR').click();assert.equal(visible().length,3);c.querySelector('#clear-filters').click();const search=c.querySelector('#agent-search');search.value='reconciliation';search.dispatchEvent(new cat.window.Event('input'));assert.equal(visible().length,1);assert.equal(visible()[0].dataset.name,'Accounto');visible()[0].querySelector('.role-details').click();assert.equal(c.querySelector('#role-dialog').open,true);assert.equal(c.querySelector('#role-title').textContent,'Accountant');c.querySelector('#close-role').click();assert.equal(c.querySelector('#role-dialog').open,false);search.value='no-such-role';search.dispatchEvent(new cat.window.Event('input'));assert.equal(c.querySelector('#catalog-empty').hidden,false);cat.window.close();
-console.log(`PASS: ${docs.size} routes, ${links} local links/assets, metadata, unique IDs, source-aligned policy, org/capability/workflow controls, catalog/filter/dialog, theme/motion/menu, bounded 3D pointer effects and safe inquiry drafts.`);
+// Commercial pages must distinguish current MIT availability from proposed services.
+assert.equal(docs.get('/pricing/').querySelectorAll('.price-card').length,4);
+assert.match(docs.get('/pricing/').body.textContent,/indicative early-access plans/);
+assert(!docs.get('/pricing/').querySelector('form[action]'));
+const guides=boot('/docs/'),gd=guides.window.document;
+gd.querySelector('[data-doc-filter="managed"]').click();
+assert(gd.querySelector('#community-docs').hidden);assert(!gd.querySelector('#managed-docs').hidden);
+gd.querySelector('[data-doc-filter="all"]').click();assert(!gd.querySelector('#community-docs').hidden);
+guides.window.close();
+const inquiry=boot('/contact/'),iq=inquiry.window.document;
+iq.querySelector('[name="company"]').value='Example organization';iq.querySelector('textarea').value='Discuss Team access';
+iq.querySelector('form').dispatchEvent(new inquiry.window.Event('submit',{cancelable:true}));
+assert.match(iq.querySelector('#draft-text').textContent,/Organization: Example organization/);
+assert.match(iq.querySelector('#inquiry-status').textContent,/Not sent/);inquiry.window.close();
+console.log(`PASS: ${docs.size} routes, ${links} local links/assets, metadata, unique IDs, source-aligned policy, org/capability/workflow controls, catalog/filter/dialog, theme/motion/menu, bounded 3D pointer effects, edition boundaries, docs filtering and safe inquiry drafts.`);

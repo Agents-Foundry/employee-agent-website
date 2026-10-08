@@ -1,6 +1,6 @@
 # Agents Foundry website
 
-The standalone public website for Agents Foundry, including twelve static pages, all 55 employee bot illustrations, interactive organization and policy explorers, the QA walkthrough, and light/dark themes.
+The standalone public website for Agents Foundry, including sixteen static pages, all 55 employee bot illustrations, interactive organization and policy explorers, the QA walkthrough, and light/dark themes.
 
 Website: https://agents-foundry.github.io/employee-agent-website/
 
@@ -26,10 +26,12 @@ This builds the site and checks routes, assets, metadata, anchors, role catalog,
 ## Edit the website
 
 - `public-pages.mjs`: page content and route definitions.
+- `commerce-pages.mjs`: Pricing, Community, Docs and Contact Us pages; current MIT Community availability and indicative managed service plans.
 - `public-components.mjs`: shared page sections and diagrams.
 - `public-data.mjs`, `catalog.json`, `role-outputs.json`: capability descriptions and employee catalog.
 - `public/public.css`: responsive design and themes.
 - `public/modern.css`: framed sections, illustrated feature grid, dimensional cards and desktop sticky storytelling.
+- `public/commerce.css`: responsive edition cards, feature comparison and resource/documentation layouts.
 - `public/depth.css`, `public/depth.js`: CSS 3D hero geometry, dimensional typography/materials and bounded pointer perspective.
 - `public/public.js`: interactive controls.
 - `public/assets/`: original bot images, logo and local font.
@@ -55,6 +57,14 @@ For manual deployment, open Actions → Deploy website to GitHub Pages → Run w
 `SITE_URL` controls the canonical URL and repository path. The workflow uses the configured Pages URL, so both project Pages and a future custom domain work. For local root hosting, set `SITE_URL=http://localhost:5173` before running `npm run dev`. For another host, set its full URL (including a subdirectory if needed) when building.
 
 The generated site includes all static routes, an XML sitemap, robots.txt, a 404 page and `.nojekyll`. It contains no runtime secrets or backend.
+
+## Community and managed service pages
+
+The edition presentation takes structural inspiration from [AG Grid pricing](https://www.ag-grid.com/license-pricing/): clear plan cards, capability comparison, FAQs and separate support routes. Agents Foundry keeps its own visual identity and MIT core; it does not adopt AG Grid's per-developer software licensing model.
+
+`/pricing/` presents free self-hosted Community and indicative Developer ($29/month), Team ($299/month), Organization ($999/month), custom Enterprise and a proposed scoped pilot. Managed pricing and capacity are early-access proposals, not a functioning purchase/subscription system. Model provider fees are separate. Requests lead to a plan-specific local inquiry draft; there is no checkout or automatic provisioning.
+
+`/community/` links setup, issues, contributions and releases. `/docs/` filters public Community and managed/organizational guides, including the existing technical docs and wiki. `/contact/` prepares a reviewed draft with optional organization context without sending or storing it on a server. The public website continues to hide the recipient's email from visible contact content.
 
 ## Source and license
 
